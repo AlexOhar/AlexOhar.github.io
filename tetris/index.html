@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>TETRIS</title>
+</head>
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source class="maldives" id="source" src="video/maldives.mp4" type="video/mp4">
+    </video>
+    
+    <div class="container">
+        <div class="header">
+            <h1 class="gradient-text">TETRIS</h1>
+        </div>
+        <div class="wrap">
+            <div class="side side_left">
+                <div class="circle">?</div>
+                <div class="informBlock_left hide">
+                    <h4>Press ENTER for start/restart</h4>
+                    <h4>Press SPACE for pause</h4>
+                    <h4>Press &#8593; for rotate</h4>
+                    <h4>Press &#8594; for step right</h4>
+                    <h4>Press &#8592; for step left</h4>
+                    <h4>Press &#8595; for a quick fall</h4>
+                </div>
+            </div>
+            <div class="wrapper">
+                <canvas width="250" height="500" id="game"></canvas> 
+            </div>
+            <div class="side side_right">
+                <div class="informBlock">
+                    <h4>Record:</h4>
+                    <h4 id="record"></h4>
+                </div>
+                <div class="informBlock">
+                    <h4>Points:</h4>
+                    <h4 id="points"></h4>
+                </div>
+                <div class="informBlock">
+                    <h4>Level:</h4>
+                    <h4 id="speed"></h4>
+                </div>
+                <div class="blockButtons">
+                    <button id="maldives">
+                        <img src="img/maldives2.jpg" alt="maldives" srcset="">
+                    </button>
+                    <button id="forest">
+                        <img src="img/forest2.jpg" alt="forest" srcset="">
+                    </button>
+                    <button id="mashrooms">
+                        <img src="img/mashroms2.jpg" alt="mashrooms" srcset="">
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
