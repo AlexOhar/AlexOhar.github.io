@@ -355,6 +355,33 @@ document.addEventListener("DOMContentLoaded", function() {
           playPause('pause');
       };
   });
+  const playBtn = document.querySelector('#playBtn'),
+        pauseBtn = document.querySelector('#pauseBtn');
+  
+  playBtn.addEventListener('click', () => {
+    if (gameOver === true) {
+      for (let row = -2; row < 20; row++) {
+          playfield[row] = [];
+        
+          for (let col = 0; col < 10; col++) {
+            playfield[row][col] = 0;
+          }
+      }
+      gameOver = false;
+      points = 0;
+      addPoints();
+      rAF = requestAnimationFrame(loop);
+      return;
+    } else {
+      rAF = requestAnimationFrame(loop);
+    };
+  });
+
+  pauseBtn.addEventListener('click', () => {
+    if(gameOver === false && gameStatus === true) {
+      playPause('pause');
+    };
+  });
 
   //повышение скорости
   function changeSpeed() {
