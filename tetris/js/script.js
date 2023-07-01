@@ -86,6 +86,11 @@ document.addEventListener("DOMContentLoaded", function() {
       [0,1,0],
       [1,1,1],
       [0,0,0],
+    ],
+    'D' : [
+      [0,0,0],
+      [0,1,0],
+      [0,0,0]
     ]
   };
 
@@ -96,7 +101,8 @@ document.addEventListener("DOMContentLoaded", function() {
     'S': '#31ED31',
     'Z': '#F51720',
     'J': '#0000FF',
-    'L': '#FF0BAC'
+    'L': '#FF0BAC',
+    'D': '#FFFFFF'
   };
 
   let count = 0,
@@ -113,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // создаём последовательность фигур, которая появится в игре
   function generateSequence() {
-      const sequence = ['I', 'J', 'L', 'O', 'S', 'T', 'Z'];
+      const sequence = ['I', 'J', 'L', 'O', 'S', 'T', 'Z', 'D'];
     
       while (sequence.length) {
         const rand = getRandomInt(0, sequence.length - 1);
