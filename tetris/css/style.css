@@ -148,3 +148,14 @@ button img {
     height: 60px;
     width: 60px;
 }
+.pausePlay {
+    margin-top: -20px;
+    display: flex;
+    gap: 20px;
+    width: 100px;
+    margin: 0 auto;
+}
+.controlBtn {
+    width: 40px;
+    height: 40px;
+}
