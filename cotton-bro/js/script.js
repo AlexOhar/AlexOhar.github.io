@@ -251,7 +251,9 @@ async function createSpecialBlock(blockName, numberSpecialBlock, category) {
     } else {
         categoryChoosed = category;
     };
-    const response = await fetch(`http://localhost:3000/goods?sortingMethod=novelties&category=${categoryChoosed}`);
+    // https://glitch.com/edit/#!/shaded-tranquil-splash
+    const response = await fetch(`https://glitch.com/edit/#!/shaded-tranquil-splash/goods?sortingMethod=novelties&category=${categoryChoosed}`);
+    // const response = await fetch(`http://localhost:3000/goods?sortingMethod=novelties&category=${categoryChoosed}`);
     const goodsData = await response.json();
     const firstFourGoods = goodsData.slice(0, 4);
     firstFourGoods.forEach(good => {
