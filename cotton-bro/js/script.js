@@ -136,6 +136,20 @@ window.addEventListener("DOMContentLoaded", async () => {
             window.location.href = `categories.html`;
         });
     });
+
+    const autumnBtn = document.getElementById('autumnBtn');
+    const newCollectionBtn = document.getElementById('newCollectionBtn');
+    autumnBtn.addEventListener('click', () => {
+        localStorage.setItem('selectedCategory', 'jackets');
+        localStorage.setItem('selectedCategoryName', 'Куртки');
+        window.location.href = `categories.html`;
+    });
+    newCollectionBtn.addEventListener('click', () => {
+        localStorage.setItem('selectedCategory', 'newCollection');
+        localStorage.setItem('selectedCategoryName', 'New collection');
+        window.location.href = `categories.html`;
+    });
+      
     const categoryForYou = localStorage.getItem('selectedCategory');
     await createSpecialBlock('Для Тебя', 0, categoryForYou);
 });
