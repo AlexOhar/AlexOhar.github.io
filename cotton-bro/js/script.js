@@ -1,100 +1,3 @@
-// window.addEventListener('DOMContentLoaded', () => {
-//     const menu = document.querySelector('.menu_dropDown'),
-//           menuItem = document.querySelectorAll('.list_item'),
-//           catalog = document.querySelector('.header_left_catalog'),
-//           mobileMenu = document.querySelector('.header_mobileMenu'),
-//           hamburger = document.querySelector('.header_mobileHamburger'),
-//           btnHamburger = document.querySelector('.header_btn'),
-//           mobileLinks = document.querySelectorAll('.header_mobileMenu a'),
-//           body = document.body;
-
-//     //преходы на страницы
-
-//     catalog.addEventListener('click', () => {
-//         openOrCloseCatalog();
-//         if(mobileMenu.classList.contains('mobile_active')) {
-//             mobileMenu.classList.remove('mobile_active');
-//             hamburger.classList.remove('hamburger_active');
-//             // offScrolling();
-//         }
-//     });
-
-//     menuItem.forEach(item => {
-//         item.addEventListener('click', openOrCloseCatalog);
-//     });
-
-//     document.addEventListener('click', (e) => {
-//         const isClickInsideModal = menu.contains(e.target);
-//         // && e.target !== btnHamburger
-//         if (!isClickInsideModal && e.target !== catalog) {
-//             menu.classList.remove('menu_dropDown_active');
-//             onScrolling();
-//         }
-//     });
-
-//     document.addEventListener('click', (e) => {
-//         const isClickInsideModalMob = mobileMenu.contains(e.target);
-        
-//         if (!isClickInsideModalMob && e.target !== btnHamburger && e.target !== catalog) {
-//             mobileMenu.classList.remove('mobile_active');
-//             hamburger.classList.remove('hamburger_active');
-//             onScrolling();
-//         }
-//     });
-   
-    
-//     btnHamburger.addEventListener('click', (e) => {
-//         if(!mobileMenu.classList.contains('mobile_active')) {
-//             mobileMenu.classList.add('mobile_active');
-//             hamburger.classList.add('hamburger_active');
-//             offScrolling();
-//         } else {
-//             mobileMenu.classList.remove('mobile_active');
-//             hamburger.classList.remove('hamburger_active');
-//             onScrolling();
-//         }
-//     });
-    
-//     mobileLinks.forEach(item => {
-//         item.addEventListener('click', () => {
-//             mobileMenu.classList.remove('mobile_active');
-//             hamburger.classList.remove('hamburger_active');
-//             onScrolling();
-//         });
-//     });
-
-//     function openOrCloseCatalog() {
-//         if(!menu.classList.contains('menu_dropDown_active')) {
-//             menu.classList.add('menu_dropDown_active');
-//             offScrolling();
-//         } else {
-//             menu.classList.remove('menu_dropDown_active');
-//             onScrolling();
-//         }
-//     }
-
-//     function offScrolling() {
-//         let pagePosition = window.scrollY;
-//         body.style.overflow = 'hidden';
-//         body.style.height = '100vh';
-//         body.style.position = 'fixed';
-//         body.style.left = '0';
-//         body.style.width = '100%';
-//         body.dataset.position = pagePosition;
-//         body.style.top = `-${pagePosition}px`;
-//     }
-    
-//     function onScrolling() {
-//         let pagePosition = parseInt(body.dataset.position, 10);
-//         // console.log(pagePosition);
-//         body.style.top = 'auto';
-//         body.style = '';
-//         window.scrollBy(pagePosition, 0);
-//         body.removeAttribute('data-position');
-//     }
-
-// });
-    
 //Scroll season cadrs
 const firstLine = document.querySelector(".season_wrapp_firstLine"),
       secondLine = document.querySelector('.season_wrapp_secondLine');
@@ -252,7 +155,7 @@ async function createSpecialBlock(blockName, numberSpecialBlock, category) {
         categoryChoosed = category;
     };
     // https://glitch.com/edit/#!/shaded-tranquil-splash
-    const response = await fetch(`https://glitch.com/edit/#!/shaded-tranquil-splash/goods?sortingMethod=novelties&category=${categoryChoosed}`);
+    const response = await fetch(`https://glitch.com/edit/#!/cotton-bro-server/goods?sortingMethod=novelties&category=${categoryChoosed}`);
     // const response = await fetch(`http://localhost:3000/goods?sortingMethod=novelties&category=${categoryChoosed}`);
     const goodsData = await response.json();
     const firstFourGoods = goodsData.slice(0, 4);
