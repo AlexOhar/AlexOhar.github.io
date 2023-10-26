@@ -102,8 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const promoCodeInput = formPromo.querySelector('input[name="promoCode"]');
         const promoCode = promoCodeInput.value;
         console.log(promoCode.value);
-
-        fetch('http://localhost:3000/promo', {
+      https://cotton-bro-server.glitch.me
+        // fetch('http://localhost:3000/promo',
+        fetch('https://cotton-bro-server.glitch.me/promo',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
