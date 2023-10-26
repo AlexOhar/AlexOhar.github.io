@@ -154,7 +154,7 @@ async function createSpecialBlock(blockName, numberSpecialBlock, category) {
     } else {
         categoryChoosed = category;
     };
-    // https://glitch.com/edit/#!/shaded-tranquil-splash
+    
     const response = await fetch(`https://cotton-bro-server.glitch.me/goods?sortingMethod=novelties&category=${categoryChoosed}`);
     // const response = await fetch(`http://localhost:3000/goods?sortingMethod=novelties&category=${categoryChoosed}`);
     const goodsData = await response.json();
