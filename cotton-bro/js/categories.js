@@ -141,7 +141,7 @@ function loadingGoods(funct, ...args) {
 async function gettingGoods(endUrl, category, color, hit) {
     try {
         // const filterData = filter;
-        const response = await fetch(`http://localhost:3000/goods?${endUrl}`);
+        const response = await fetch(`https://cotton-bro-server.glitch.me/goods?${endUrl}`);
         const goodsData = await response.json();
         goodsData.forEach(good => {
             if(!good.hits && good.category == category) {
