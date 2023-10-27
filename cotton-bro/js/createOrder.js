@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const discount = localStorage.getItem('discount');
         formData.append(`discount`, `${discount}%`);
 
-        fetch('http://localhost:3000/order_form', {
+        fetch('https://cotton-bro-server.glitch.me/order_form', {
             method: 'POST',
             body: formData
         })
