@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="footer_wrapper">
                 <div class="footer_wrapper_left">
                     <div class="footer_wrapper_left_subheader">Подпишись на новости и скидки и получи -15% скидки</div>
-                    <input type="email" name="" id="" placeholder="E-mail" pattern=".+@google\.com" size="32" required>
+                    <input type="email" name="mail" placeholder="E-mail" pattern=".+@google\.com" size="32" required>
                     <button class="footer_wrapper_left_button">Подписаться</button>
                 </div>
                 <div class="footer_wrapper_center">
