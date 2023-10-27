@@ -1,0 +1,23 @@
+@media (max-width: 575px) {
+    header {
+        padding: 20px 10px;
+    }
+    h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+    .portfolio {
+        height: 100%;
+        padding: 20px 20px;
+    }
+    .cards {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .card {
+        height: 80px;
+        padding: 250px 0 0;
+    }
+}
