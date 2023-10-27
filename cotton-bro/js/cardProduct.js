@@ -21,8 +21,7 @@ function loadingGoods(funct, ...args) {
 let goodsColors; 
 async function gettingGoods(endUrl) {
     try {
-        // const response = await fetch(`http://localhost:3000/goods?${endUrl}`);
-        const response = await fetch(`https://cotton-bro-server.glitch.me/goods?${endUrl}`);
+        const response = await fetch(`http://localhost:3000/goods?${endUrl}`);
         const goodsData = await response.json();
         goodsData.forEach(good => {
             localStorage.setItem('currentGood', JSON.stringify(good));
@@ -206,6 +205,10 @@ function addToBasket() {
         setTimeout(function() {
             goodAdd.innerHTML = 'Добавить в корзину';
         }, 2000);
+        const basketCounters = document.querySelectorAll('.basketIcon_count');
+        basketCounters.forEach(icon => {
+            icon.innerHTML = `${quantity}`;
+        });
     });
 }
 
@@ -275,8 +278,7 @@ async function createSpecialBlocks(blockName, numberSpecialBlock, category) {
     const wrapp = document.createElement('div');
     wrapp.classList.add('specialBlock_wrapp');
     specialBlock.append(wrapp);
-    // const response = await fetch(`http://localhost:3000/goods?sortingMethod=novelties&category=${category}`);
-    const response = await fetch(`https://cotton-bro-server.glitch.me/goods?sortingMethod=novelties&category=${category}`);
+    const response = await fetch(`http://localhost:3000/goods?sortingMethod=novelties&category=${category}`);
     const goodsData = await response.json();
     const firstFourGoods = goodsData.slice(0, 7);
     firstFourGoods.forEach(good => {

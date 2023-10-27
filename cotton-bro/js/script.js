@@ -1,3 +1,4 @@
+    
 //Scroll season cadrs
 const firstLine = document.querySelector(".season_wrapp_firstLine"),
       secondLine = document.querySelector('.season_wrapp_secondLine');
@@ -136,7 +137,8 @@ window.addEventListener("DOMContentLoaded", async () => {
             window.location.href = `categories.html`;
         });
     });
-
+    const categoryForYou = localStorage.getItem('selectedCategory');
+    await createSpecialBlock('Для Тебя', 0, categoryForYou);
     const autumnBtn = document.getElementById('autumnBtn');
     const newCollectionBtn = document.getElementById('newCollectionBtn');
     autumnBtn.addEventListener('click', () => {
@@ -149,9 +151,6 @@ window.addEventListener("DOMContentLoaded", async () => {
         localStorage.setItem('selectedCategoryName', 'New collection');
         window.location.href = `categories.html`;
     });
-      
-    const categoryForYou = localStorage.getItem('selectedCategory');
-    await createSpecialBlock('Для Тебя', 0, categoryForYou);
 });
 
 
@@ -168,9 +167,7 @@ async function createSpecialBlock(blockName, numberSpecialBlock, category) {
     } else {
         categoryChoosed = category;
     };
-    
-    const response = await fetch(`https://cotton-bro-server.glitch.me/goods?sortingMethod=novelties&category=${categoryChoosed}`);
-    // const response = await fetch(`http://localhost:3000/goods?sortingMethod=novelties&category=${categoryChoosed}`);
+    const response = await fetch(`http://localhost:3000/goods?sortingMethod=novelties&category=${categoryChoosed}`);
     const goodsData = await response.json();
     const firstFourGoods = goodsData.slice(0, 4);
     firstFourGoods.forEach(good => {

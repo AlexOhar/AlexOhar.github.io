@@ -102,9 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const promoCodeInput = formPromo.querySelector('input[name="promoCode"]');
         const promoCode = promoCodeInput.value;
         console.log(promoCode.value);
-      https://cotton-bro-server.glitch.me
-        // fetch('http://localhost:3000/promo',
-        fetch('https://cotton-bro-server.glitch.me/promo',{
+
+        fetch('http://localhost:3000/promo', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -176,6 +175,10 @@ function changesIntoBasket(item, act, side) {
             localStorage.setItem('basketCounter', 0);
         } else {
             localStorage.setItem('basketCounter', newQuantity);
+            const basketCounters = document.querySelectorAll('.basketIcon_count');
+            basketCounters.forEach(icon => {
+                icon.innerHTML = `${newQuantity}`;
+            });
         }
         item.remove();
         const newArrBasket = arrBasket.filter(obj => {
@@ -221,6 +224,10 @@ function changesIntoBasket(item, act, side) {
         const newAmount = Number(amount.slice(0,-3));
         localStorage.setItem('basketCounter', newAmount);
         basketCounter.innerHTML = `${newAmount}`;
+        const basketCounters = document.querySelectorAll('.basketIcon_count');
+        basketCounters.forEach(icon => {
+            icon.innerHTML = `${newAmount}`;
+        });
     };
 };
 
