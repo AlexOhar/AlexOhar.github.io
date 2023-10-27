@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const promoCode = promoCodeInput.value;
         console.log(promoCode.value);
 
-        fetch('http://localhost:3000/promo', {
+        fetch('https://cotton-bro-server.glitch.me/promo', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
