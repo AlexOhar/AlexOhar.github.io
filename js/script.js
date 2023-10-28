@@ -1,6 +1,6 @@
-const cardSkyStudy = document.querySelector('.cardSkyStudy'),
-      cardCottonBro = document.querySelector('.cardCottonBro'),
-      cardTetris = document.querySelector('.cardTetris');
+const cardSkyStudy = document.querySelector('.portfolio_cards_card_cardSkyStudy'),
+      cardCottonBro = document.querySelector('.portfolio_cards_card_cardCottonBro'),
+      cardTetris = document.querySelector('.portfolio_cards_card_cardTetris');
 
 cardSkyStudy.addEventListener('click', () => {
     window.location.href = `https://alexohar.github.io/skystudy/`;
