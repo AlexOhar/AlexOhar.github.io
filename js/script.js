@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-loading.style.display = 'none';
+// loading.style.display = 'none';
 
 window.addEventListener('load', function() {
     const loading = document.getElementById('loading');
@@ -22,13 +22,13 @@ window.addEventListener('load', function() {
     
     const titleOne = document.querySelector('.title');
     const titleTwo = document.querySelector('.titleTwo');
-    // setTimeout(function() {
-    //     titleOne.style.display = 'none';
-    // }, 7000);
+    setTimeout(function() {
+        titleOne.style.display = 'none';
+    }, 7000);
     setTimeout(function() {
         titleOne.style.display = 'none';
         titleTwo.style.display = 'block';
-        titleTwo.style.animation = "printed-text 5s steps(25), flashin-border .75s step-start infinite";
+        titleTwo.style.animation = "printed-text 4s steps(25), flashin-border .75s step-start infinite";
     }, 4000);
 
     const linksBtnOpen = document.querySelector('.portfolio_links_btn'),
