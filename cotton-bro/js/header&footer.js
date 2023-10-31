@@ -103,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
     btnHamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
         const counterBask = document.getElementById('counterOnHamburger');
         if(!mobileMenu.classList.contains('mobile_active')) {
             mobileMenu.classList.add('mobile_active');
