@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-loading.style.display = 'none';
+//loading.style.display = 'none';
 
 window.addEventListener('load', function() {
     const loading = document.getElementById('loading');
