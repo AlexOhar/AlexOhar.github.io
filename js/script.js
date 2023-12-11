@@ -64,21 +64,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     })
 
-    const linksBtnOpen = document.querySelector('.portfolio_links_btn'),
+    const linksBtn = document.querySelector('.portfolio_links_btn'),
             linksMenu = document.querySelector('.portfolio_links'),
             linkLinkedIn = document.querySelector('.portfolio_links_big'),
             linkGitHub = document.querySelector('.portfolio_links_big_middle'),
             linkTelegram = document.querySelector('.portfolio_links_big_middle_small');
 
-    linksBtnOpen.addEventListener('click', () => {
-        linksMenu.classList.toggle('portfolio_links_openLinks');
-        linksBtnOpen.classList.toggle('hover-effect');
+    linksBtn.addEventListener('click', () => {
+        if (!linksMenu.classList.contains('portfolio_links_openLinks')) {
+            linksMenu.classList.add('portfolio_links_openLinks');
+            linksBtn.classList.add('hover-effect');
+        } else {
+            linksMenu.classList.remove('portfolio_links_openLinks');
+            linksBtn.classList.remove('hover-effect');
+        }
+        
     });
     document.addEventListener('click', (e) => {
-        if (!linksMenu.contains(e.target) && !linksBtnOpen.contains(e.target)) {
-            linksMenu.classList.toggle('portfolio_links_openLinks');
-            linksBtnOpen.classList.toggle('hover-effect');
+        if (linksMenu.classList.contains('portfolio_links_openLinks')) {
+            if (!linksMenu.contains(e.target) && !linksBtn.contains(e.target)) {
+                linksMenu.classList.remove('portfolio_links_openLinks');
+                linksBtn.classList.remove('hover-effect');
+            }
         }
+        
     });
 
     linkLinkedIn.addEventListener('click', (e) => {
@@ -115,6 +124,4 @@ window.addEventListener('load', function() {
         titleTwo.style.display = 'block';
         titleTwo.style.animation = "printed-text 4s steps(25), flashin-border .75s step-start infinite";
     }, 4000);
-
-    
 });
