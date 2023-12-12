@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const cardsWrapper = document.querySelector('.portfolio_cards');
     const dataCards = [
+        {header: 'Coffe Shop', dataLink: "https://alexohar.github.io/coffeshop", dataBgImg: "/img/coffeshop.jpg", description: `This web-page portfolio was designed to practice for my skills.<br>Used: React`},
         {header: 'Exemple Portfolio', dataLink: "https://alexohar.github.io/portfolio", dataBgImg: "/img/portfolio.jpg", description: `This web-page portfolio was designed to practice for my skills.<br>Used: HTML, SASS, JS, Gulp`},
         {header: 'Run Smart', dataLink: "https://alexohar.github.io/runsmart", dataBgImg: "/img/runsmart.jpg", description: `This lending page was designed to practice using form and mailers.<br>Used: HTML, SASS, JS, php`},
         {header: 'Tetris', dataLink: "https://alexohar.github.io/tetris/", dataBgImg: "/img/tetris2.png", description: `This Tetris game page was developed as a practice for my skills<br>Used: HTML, CSS, JS, Canvas`},
