@@ -1,9 +1,4 @@
 import { dropdownMenu, fixLinksMenu, handleDocumentClick } from '../js/modules.js';
-document.addEventListener('DOMContentLoaded', () => {
-  dropdownMenu();
-  fixLinksMenu();
-  document.addEventListener('click', handleDocumentClick);
-});
 
 // global variables:
 let radius = 240; // start radius
@@ -113,3 +108,31 @@ document.onwheel = function(event) {
   }
   init(1);
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  dropdownMenu();
+  fixLinksMenu();
+  document.addEventListener('click', handleDocumentClick);
+
+  const linkContacts = document.querySelector('#contacts');
+        
+  linkContacts.addEventListener('click', () => {
+    odrag.style.transition = "transform 0.5s";
+    translateY = 90;
+    applyTranform(odrag);
+    
+    const btnCloseModal = document.querySelector('#closeModal');
+    btnCloseModal.addEventListener('click', () => {
+      translateY = 10;
+      applyTranform(odrag);
+  
+      setTimeout(() => {
+        odrag.style.transition = "transform 0s";
+      }, 500);
+      
+    });
+  });
+
+  
+})
+
