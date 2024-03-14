@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     moveBalls();
     const btnBack = document.querySelector('.btnBack');
     btnBack.addEventListener('click', () => {
-        window.open(`index.html`);
+        window.open(`https://alexohar.github.io/`);
     })
 
     const cardsWrapper = document.querySelector('.allPortfolio_cards');

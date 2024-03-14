@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnsPorfolio = document.querySelectorAll('.firstScreen_card_circle');
     btnsPorfolio.forEach(btn => {
         btn.addEventListener('click', () => {
-            window.open('portfolio.html', '_blank');
+            window.open('https://alexohar.github.io/allproject');
         })
     })
 
