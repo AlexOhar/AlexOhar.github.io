@@ -67,22 +67,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --------------------------------------------------squares in the 'about' block
     const squaresCard = document.querySelector('.about_card');
-
-    for (let i = 0; i < 680; i++) {
-        const square = document.createElement('div');
-        square.classList.add('about_card_square');
-        squaresCard.appendChild(square);
-    }
-
-    const allSquares = document.querySelectorAll('.about_card_square');
-    allSquares.forEach(square => {
-        square.addEventListener('mouseenter', () => {
-            square.classList.add('squareActive');
-            setTimeout(() => {
-                square.classList.remove('squareActive');
-            }, 300);
+    if (window.innerWidth > 767) {
+        for (let i = 0; i < 680; i++) {
+            const square = document.createElement('div');
+            square.classList.add('about_card_square');
+            squaresCard.appendChild(square);
+        }
+    
+        const allSquares = document.querySelectorAll('.about_card_square');
+        allSquares.forEach(square => {
+            square.addEventListener('mouseenter', () => {
+                square.classList.add('squareActive');
+                setTimeout(() => {
+                    square.classList.remove('squareActive');
+                }, 300);
+            });
         });
-    });
+    }
+    
 
     
     //---------------------------------------------------custome section benefits
@@ -207,7 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, options);
     
     observer.observe(skillsElement);
-
 
     document.querySelector('.skillsText').addEventListener('mousemove', (e) => {
         const rect = e.target.getBoundingClientRect();
@@ -521,4 +522,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     };
+
+    //кеширование
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/js/service-worker.js')
+        .then(function(registration) {
+          console.log('Service Worker registered with scope: ', registration.scope);
+        })
+        .catch(function(err) {
+          console.log('Service Worker registration failed: ', err);
+        });
+      }
 });
